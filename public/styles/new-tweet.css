@@ -1,9 +1,8 @@
 #tweet-text {
   outline: none;
+  outline: 0;
+  border: 0;
   border-bottom: 3px solid black;
-  border-top-style: hidden;
-  border-left-style: hidden;
-  border-right-style: hidden;
   background-image: none;
   background-color: #f4f1ec;
   width: 100%;
@@ -14,15 +13,19 @@
   background-color: #4056A1;
   color: #FFFFFF;
 }
-
-.container div {
+/* 
+.container  {
   display: flex;
   justify-content: space-between;
   font-family: 'Bungee', cursive;;
-}
+} */
 
 .container form {
   font-weight: 600;
+}
+
+.over-limit {
+  color: red;
 }
 
 

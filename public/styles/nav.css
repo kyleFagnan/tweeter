@@ -9,6 +9,8 @@ nav {
   justify-content: space-between;
   align-items: center;
   z-index: 1;
+  position: fixed;
+  top: 0;
 }
 nav span {
   font-family: 'Bungee', cursive;;
