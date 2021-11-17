@@ -1,18 +1,18 @@
-$(document).ready(function() {
-  console.log('it worked!');
-});
+
 
 $(document).ready(function () {
   $('#tweet-text').keydown (function () {
-    const value = $(this).val().length;
-    const charLeft = 140;
-    const newCount = charLeft - value;
+    const limit = 140;
+    const count = $(this).val().length;
+    const $counter =  $(this).parentsUntil(".new-tweet").find(".counter");
 
-    $(this).parentsUntil(".new-tweet").find(".counter").text(newCount);
+    $counter.text(limit - count);
 
-    if (newCount < 0) {
-      $('.counter').css('color', 'red');
+    if ($counter.val() < 0) {
+      return $counter.addClass('over-limit');
     }
+
+    $counter.removeClass('over-limit');
   })
 });
 

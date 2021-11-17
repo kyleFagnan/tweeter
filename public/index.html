@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/tweet.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -47,7 +48,7 @@
     
     </nav>
 
-    <header>
+    <header class ="profile">
       <div>
           <img src="/images/profile-hex.png"> 
       </div>
@@ -70,6 +71,33 @@
           </div>
         </form>
       </section>
+
+      <section class="tweets">
+        <article class = "tweet">
+          <header>
+            <div class= "tweet-name">
+              <img class="i-avatar" src="https://i.imgur.com/73hZDYK.png" alt="avatar-icon">
+            <div id="display-name">Popeye</div>
+          </div>
+          <div id="handle-name">@popeye</div>
+          </header>
+
+          <div class="tweet-content">
+            Always eat your spinach!
+          </div>
+
+
+          <footer>
+            <div class="time-since">10 days ago</div>
+            <div class='icons'>
+              <i id='i-flag' class="fas fa-flag"></i>
+              <i id='i-retweet' class="fas fa-retweet"></i>
+              <i id='i-heart' class="fas fa-heart"></i>
+            </div>
+          </footer>
+        </article>
+      </section>
+      
     </main>
   </body>
 </html>
