@@ -1,57 +1,53 @@
-$(document).ready(function () {
 /*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
+* Client-side JS logic goes here
+* jQuery is already loaded
+* Reminder: Use (and do all your DOM work in) jQuery's document ready function
+*/
 
 
 
-//hard coded tweet data object
 
-const data = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png",
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1637007777660
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd"
-    },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1637094177660
-  }
-];
+$(document).ready(function() {
 
-const renderTweets = function(tweets) {
-  
-  
-  // loops through tweets
+
+  //loop through array of tweets and append to the tweets container
+  const renderTweets = function(tweets) {
   $.each(tweets, (key) => {
-   
-    const tweet = createTweetElement(tweets[key]);
-    
+   const tweet = createTweetElement(tweets[key]);
     $('#tweets-container').append(tweet);
+    });
+  };
+  
+//ajax get request received as JSON
+  const loadTweets = function() {
+    $.ajax('/tweets', {method: 'GET'})  
+    .then(function(arrTweets) {
+      $('#tweets-container').empty(); 
+      renderTweets(arrTweets);
+    });
+  };
+  loadTweets();
+  
+  
+  
+  $("form").submit(function(event) {
+    event.preventDefault(); //prevent default action of submit button.
+
+    const url = $(this).attr("action"); //sets url to first action attribute which = '/tweets'
+    let qStr = $(this).serialize() //turns data in query string
+    $.post(url, qStr, function() { //post request to send data to server
+      $('#tweet-text').val(''); //clear text from tweet textbox after tweet
+      $('.counter').val(140); // reset counter back to 140 after tweet
+      loadTweets();
+    });
   });
 
-  // takes return value and appends it to the tweets container
-  // $tweet.append($allTweets); // use once we have a dynamic var
-}
+  
+//create new tweet html
+  const createTweetElement = function(tweetData) {
 
-  const createTweetElement = function (tweetData) {
-
-  let $tweet = $(`      
+    //constructed html for tweets
+    let $tweet = $(`      
       <article class = "tweet">
       <header>
         <div class= "tweet-name">
@@ -76,9 +72,9 @@ const renderTweets = function(tweets) {
     `);
     return $tweet;
   };
+
+
+});
     
-    
-    
-  renderTweets(data);
-   
-  });
+
+
