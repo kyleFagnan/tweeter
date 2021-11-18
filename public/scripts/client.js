@@ -14,7 +14,7 @@ $(document).ready(function() {
   const renderTweets = function(tweets) {
   $.each(tweets, (key) => {
    const tweet = createTweetElement(tweets[key]);
-    $('#tweets-container').append(tweet);
+    $('#tweets-container').prepend(tweet);
     });
   };
   
@@ -22,7 +22,7 @@ $(document).ready(function() {
   const loadTweets = function() {
     $.ajax('/tweets', {method: 'GET'})  
     .then(function(arrTweets) {
-      $('#tweets-container').empty(); 
+      $('#tweets-container').empty();// remove tweets that have already been posted
       renderTweets(arrTweets);
     });
   };
@@ -33,6 +33,17 @@ $(document).ready(function() {
   $("form").submit(function(event) {
     event.preventDefault(); //prevent default action of submit button.
 
+    let textData = $('#tweet-text').val();
+
+    
+    if (textData === '' || textData === null) {
+      alert("Tweet can not be empty!!!")
+    }
+    if (textData.length > 140) {
+      alert("Tweet can not be longer then 140 characters!!!")
+    }
+
+    
     const url = $(this).attr("action"); //sets url to first action attribute which = '/tweets'
     let qStr = $(this).serialize() //turns data in query string
     $.post(url, qStr, function() { //post request to send data to server
