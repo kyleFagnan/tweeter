@@ -31,11 +31,11 @@ article.tweet header div.tweet-name {
   align-items: center;
 }
 
-#display-name {
+#userName {
   padding-left: 0.5em;
 }
 
-#handle-name {
+#handle {
   color:lightslategrey;
 }
 
