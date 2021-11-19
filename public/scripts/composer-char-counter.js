@@ -1,5 +1,5 @@
 
-
+//character counter
 $(document).ready(function () {
   $('#tweet-text').keydown (function () {
     const limit = 140;

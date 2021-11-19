@@ -9,40 +9,41 @@
 
 $(document).ready(function() {
 
-  if ( $('#error').is(":empty") ) {
+  if ($('#error').is(":empty")) {
     $('#error').hide();
   }
 
 
   //loop through array of tweets and append to the tweets container
   const renderTweets = function(tweets) {
-  $.each(tweets, (key) => {
-   const tweet = createTweetElement(tweets[key]);
-    $('#tweets-container').prepend(tweet);
+    $.each(tweets, (key) => {
+      const tweet = createTweetElement(tweets[key]);
+      $('#tweets-container').prepend(tweet);
     });
   };
   
-//ajax get request received as JSON
+  //ajax get request received as JSON
   const loadTweets = function() {
-    $.ajax('/tweets', {method: 'GET'})  
-    .then(function(arrTweets) {
-      $('#tweets-container').empty();// remove tweets that have already been posted
-      renderTweets(arrTweets);
-    });
+    $.ajax('/tweets', {method: 'GET'})
+      .then(function(arrTweets) {
+        $('#tweets-container').empty();// remove tweets that have already been posted
+        renderTweets(arrTweets);
+      });
   };
   loadTweets();
   
   
-  
+  //submitting tweets
   $("form").submit(function(event) {
     event.preventDefault(); //prevent default action of submit button.
-    if ( $('#error').is(":visible") ) {
+    if ($('#error').is(":visible")) {
       $('#error').empty();
       $('#error').slideUp("fast");
     }
 
     let textData = $('#tweet-text').val();
     
+    //text area errors
     if (textData === '') {
       $('#error').text('🛑🛑🛑 Tweet Cannot be Empty Plz try again 🛑🛑🛑');
       $('#error').slideDown("slow");
@@ -61,7 +62,7 @@ $(document).ready(function() {
 
     
     const url = $(this).attr("action"); //sets url to first action attribute which = '/tweets'
-    let qStr = $(this).serialize() //turns data in query string
+    let qStr = $(this).serialize(); //turns data in query string
     $.post(url, qStr, function() { //post request to send data to server
       $('#tweet-text').val(''); //clear text from tweet textbox after tweet
       $('.counter').val(140); // reset counter back to 140 after tweet
@@ -70,7 +71,7 @@ $(document).ready(function() {
   });
 
   
-//create new tweet html
+  //create new tweet html
   const createTweetElement = function(tweetData) {
 
     //constructed html for tweets
