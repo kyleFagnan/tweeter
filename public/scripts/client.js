@@ -9,6 +9,10 @@
 
 $(document).ready(function() {
 
+  if ( $('#error').is(":empty") ) {
+    $('#error').hide();
+  }
+
 
   //loop through array of tweets and append to the tweets container
   const renderTweets = function(tweets) {
@@ -32,15 +36,27 @@ $(document).ready(function() {
   
   $("form").submit(function(event) {
     event.preventDefault(); //prevent default action of submit button.
+    if ( $('#error').is(":visible") ) {
+      $('#error').empty();
+      $('#error').slideUp("fast");
+    }
 
     let textData = $('#tweet-text').val();
-
     
-    if (textData === '' || textData === null) {
-      alert("Tweet can not be empty!!!")
+    if (textData === '') {
+      $('#error').text('🛑🛑🛑 Tweet Cannot be Empty Plz try again 🛑🛑🛑');
+      $('#error').slideDown("slow");
+      return false;
+    }
+    if (textData === null) {
+      $('#error').text('🛑🛑🛑 Tweet cannot be Null plz try again 🛑🛑🛑');
+      $('#error').slideDown("slow");
+      return false;
     }
     if (textData.length > 140) {
-      alert("Tweet can not be longer then 140 characters!!!")
+      $('#error').text('🛑🛑🛑 Tweet is too long, plz don\'t ramble 🛑🛑🛑');
+      $('#error').slideDown("slow");
+      return false;
     }
 
     

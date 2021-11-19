@@ -1,3 +1,8 @@
+
+
+
+
+
 #tweet-text {
   outline: none;
   outline: 0;
@@ -13,12 +18,7 @@
   background-color: #4056A1;
   color: #FFFFFF;
 }
-/* 
-.container  {
-  display: flex;
-  justify-content: space-between;
-  font-family: 'Bungee', cursive;;
-} */
+
 
 .container form {
   font-weight: 600;
@@ -28,6 +28,15 @@
   color: red;
 }
 
+#error {
+color: red;
+border: 3px solid red;
+margin-top: 2%;
+padding: 1%;
+font-weight: 600;
+
+
+}
 
 
 
