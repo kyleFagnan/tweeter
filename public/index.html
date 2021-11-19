@@ -6,6 +6,8 @@
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
 
@@ -45,7 +47,7 @@
     <nav>
       <span>tweeter</span>
       <div class="newTweet">
-      <p>Write a new Tweet<br><i class="fas fa-angle-double-down"></i></p>
+      <p><strong>Write</strong> a new Tweet<br><i class="fas fa-angle-double-down"></i></p>
     </div>
 
 
@@ -53,21 +55,18 @@
     </nav>
 
     <header class ="profile">
-      <div>
-          <img src="/images/profile-hex.png"> 
-      </div>
-      <br>
-      <div>
-          <h2>Your Name</h2>
-      </div>
+     
+      <img class = "proLogo" src="/images/profile-hex.png"> 
+      <h2>Popeye</h2>
+      
   </header>
 
     <!-- Page-specific (main) content here -->
     <main class="container">
 
+      <section class="new-tweet">
       <div id="error"></div>
 
-      <section class="new-tweet">
         <h2>Compose Tweet</h2>
         <form action="/tweets" method="post">
           <label for="tweet-text">What are you humming about?</label>

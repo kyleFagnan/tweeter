@@ -72,3 +72,11 @@ article.tweet footer {
   cursor: pointer;
   color: rgb(199, 145, 9);
 }
+
+@media screen and (min-width: 1024px) {
+
+  #tweets-container {
+    width: 55vw;
+    margin-right: 5%;
+  }
+}

@@ -38,5 +38,22 @@ font-weight: 600;
 
 }
 
+@media screen and (min-width: 1024px) {
+
+  .new-tweet {
+    margin-top: 15%;
+    margin-right: 5%;
+    width: 55vw;
+  }
+}
 
 
+#error {
+  
+  
+  
+  
+  
+  
+  
+  }
