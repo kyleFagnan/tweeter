@@ -3,16 +3,29 @@
   outline: none;
   outline: 0;
   border: 0;
-  border-bottom: 3px solid black;
+  border-bottom: 3px solid blanchedalmond;
   background-image: none;
-  background-color: #f4f1ec;
+  background-color: rgb(27, 107, 131);
   width: 100%;
   height: 1.5em;
+  color:blanchedalmond;
+  
+}
+
+.new-tweet label {
+  color: #770531;
+  font-size: 30px;
+}
+
+.newTweetFooter {
+  display: flex;
+  justify-content: space-between;
 }
 
 .container button {
-  background-color: #4056A1;
+  background-color: #770531;
   color: #FFFFFF;
+  background-image: url("https://www.transparenttextures.com/patterns/brushed-alum-dark.png");
 }
 
 
@@ -33,13 +46,13 @@ font-weight: 600;
 
 
 }
-
+/* media query for desktop */
 @media screen and (min-width: 1024px) {
 
   .new-tweet {
     margin-top: 15%;
     margin-right: 5%;
-    width: 55vw;
+    width: 50vw;
   }
 }
 

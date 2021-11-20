@@ -1,19 +1,29 @@
-article.tweet {
+ article.tweet {
   display: flex;
   flex-direction: column;
   margin-top: 2em;
   padding: .5em;
-  border: 3px solid black;
+  border: 3px solid blanchedalmond;
   width: 100%;
-  color: black;
+  color:blanchedalmond;
   margin-bottom: 30px;
+  
   
 }
 
+.new-tweet {
+  color: blanchedalmond;
+}
+
+
+.tweet {
+  background-color: rgb(27, 107, 131);
+}
+
 article.tweet:hover {
-  box-shadow: 0.4em .4em 0em 0em #4d5a81;
-  -webkit-box-shadow: 0.4em .4em 0em 0em #4d5a81;
-  -moz-box-shadow: 0.4em .4em 0em 0em #4d5a81;
+  box-shadow: 0.4em .4em 0em 0em #770531;
+  -webkit-box-shadow: 0.4em .4em 0em 0em #770531;
+  -moz-box-shadow: 0.4em .4em 0em 0em #770531;
 }
 
 
@@ -36,7 +46,7 @@ article.tweet header div.tweet-name {
 }
 
 #handle {
-  color:lightslategrey;
+  color: blanchedalmond;
 }
 
 article.tweet div.tweet-content {
@@ -45,7 +55,7 @@ article.tweet div.tweet-content {
   padding-left: .5em;
   display: flex;
   align-items: flex-start;
-  border-bottom: 4px solid black;
+  border-bottom: 4px solid blanchedalmond;;
   font-weight: 600;
 }
 
@@ -61,7 +71,7 @@ article.tweet footer {
 .icons {
   display: flex;
   justify-content: space-between;
-  color: rgb(20, 20, 206)
+  color:#770531;
 }
 
 .fas {
@@ -74,11 +84,13 @@ article.tweet footer {
 }
 
 
+
+
 /* media query for desktop */
 @media screen and (min-width: 1024px) {
 
   #tweets-container {
-    width: 55vw;
+    width: 50vw;
     margin-right: 5%;
   }
 }

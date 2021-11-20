@@ -10,7 +10,7 @@ nav {
     padding-left: 1.5em;
     padding-right: 1.5em;
     
-    color: #FFFFFF;
+    color: blanchedalmond;
     transition: top 0.3s;
   }
 
@@ -27,24 +27,18 @@ nav {
   }
 
   .fa-angle-double-down {
-    color: rgb(27, 228, 87);
+    color: rgb(12, 194, 194);
   }
 
 
-
-
-
-
-
-
-
-
+/* media query for desktop */
 @media screen and (min-width: 1024px){
 
 nav {
-  background-color: #4056A1;
+  background-color: #770531;
   z-index: 1;
   top: 0;
+  background-image: url("https://www.transparenttextures.com/patterns/brushed-alum-dark.png");
 }
 
 
